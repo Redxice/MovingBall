@@ -1,0 +1,34 @@
+#
+# Project specific excludes
+#
+
+tomcat
+
+#
+# Default excludes
+#
+
+# Binaries
+.jar
+.ear
+.war
+*.class
+
+# Maven 
+target/
+
+
+
+# NetBeans specific
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nb-gradle/
+
+.jacocoverage/
+UnittestenTime/nbproject/private/private.xml
+UnittestenTime/.jacocoverage/jacoco.latest.exec
+UnittestenTime/.jacocoverage/report.html/fontys.time/index.source.html
+/AEX-Banner/nbproject/private/
