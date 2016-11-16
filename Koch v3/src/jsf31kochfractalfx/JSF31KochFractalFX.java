@@ -15,6 +15,8 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.input.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -73,6 +75,24 @@ public class JSF31KochFractalFX extends Application {
         // Drawing panel for Koch fractal
         kochPanel = new Canvas(kpWidth,kpHeight);
         grid.add(kochPanel, 0, 3, 25, 1);
+        
+        // progresbar left
+        ProgressBar pbleft = new ProgressBar(0.100);
+        ProgressIndicator pileft = new ProgressIndicator(0.100);
+        grid.add(pbleft, 5,7);
+        grid.add(pileft, 6,7);
+        
+        // progresbarr right
+        ProgressBar pbright = new ProgressBar(0.100);
+        ProgressIndicator piright = new ProgressIndicator(0.100);
+        grid.add(pbright, 5,8);
+        grid.add(piright, 6,8);
+        
+        // progresbarr bottom
+        ProgressBar pbbottom = new ProgressBar(0.100);
+        ProgressIndicator pibottom = new ProgressIndicator(0.100);
+        grid.add(pbbottom, 5,9);
+        grid.add(pibottom, 6,9);
         
         // Labels to present number of edges for Koch fractal
         labelNrEdges = new Label("Nr edges:");
