@@ -52,6 +52,12 @@ public class JSF31KochFractalFX extends Application {
     private Label labelCalcText;
     private Label labelDraw;
     private Label labelDrawText;
+    private Label ProgressLeft;
+    private Label ProgressRight;
+    private Label ProgressBottom;
+    private Label NrEdgesLeft;
+    private Label NrEdgesRight;
+    private Label NrEdgesBottom;
     
     // Koch panel and its size
     private Canvas kochPanel;
@@ -77,22 +83,28 @@ public class JSF31KochFractalFX extends Application {
         grid.add(kochPanel, 0, 3, 25, 1);
         
         // progresbar left
-        ProgressBar pbleft = new ProgressBar(0.100);
-        ProgressIndicator pileft = new ProgressIndicator(0.100);
-        grid.add(pbleft, 5,7);
-        grid.add(pileft, 6,7);
+        ProgressLeft = new Label("Progress Left :");
+        NrEdgesLeft = new Label("Nr Edges :");
         
+        ProgressBar pbleft = new ProgressBar(0);
+        grid.add(pbleft, 5,7);
+        grid.add(ProgressLeft, 3, 7);
+        grid.add(NrEdgesLeft, 9, 7);
         // progresbarr right
-        ProgressBar pbright = new ProgressBar(0.100);
-        ProgressIndicator piright = new ProgressIndicator(0.100);
+        ProgressRight = new Label("Progress right :");
+        NrEdgesRight = new Label("Nr Edges :");
+        grid.add(ProgressRight, 3, 8);
+        grid.add(NrEdgesRight, 9, 8);
+        ProgressBar pbright = new ProgressBar(0);
         grid.add(pbright, 5,8);
-        grid.add(piright, 6,8);
         
         // progresbarr bottom
-        ProgressBar pbbottom = new ProgressBar(0.100);
-        ProgressIndicator pibottom = new ProgressIndicator(0.100);
+        ProgressBar pbbottom = new ProgressBar(0);
+        ProgressBottom = new Label("Progress Bottom :");
+        NrEdgesBottom = new Label("Nr Edges :");
+        grid.add(ProgressBottom, 3, 9);
+        grid.add(NrEdgesBottom, 9, 9);
         grid.add(pbbottom, 5,9);
-        grid.add(pibottom, 6,9);
         
         // Labels to present number of edges for Koch fractal
         labelNrEdges = new Label("Nr edges:");
@@ -182,7 +194,7 @@ public class JSF31KochFractalFX extends Application {
         
         // Create the scene and add the grid pane
         Group root = new Group();
-        Scene scene = new Scene(root, kpWidth+50, kpHeight+170);
+        Scene scene = new Scene(root, kpWidth+50, kpHeight+350);
         root.getChildren().add(grid);
         
         // Define title and assign the scene for main window
